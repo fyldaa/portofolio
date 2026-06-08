@@ -54,12 +54,12 @@ body {
 
 .section-title-display {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.2rem, 4vw, 4.2rem);
+  font-size: clamp(2rem, 8vw, 4.2rem);
   font-weight: 300;
   line-height: 1.05;
   color: var(--brown);
   letter-spacing: -0.01em;
-  margin-bottom: 56px;
+  margin-bottom: 32px;
 }
 .section-title-display em { font-style: italic; color: var(--blush-dark); }
 
@@ -74,26 +74,10 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── GLOBAL RESPONSIVE UTILITIES ── */
-@media (max-width: 768px) {
-  .section-title-display { margin-bottom: 32px; }
-}
-/* ── TOUCH & SAFE AREA ── */
-@media (hover: none) and (pointer: coarse) {
-  /* Pastikan tap targets minimal 44px (Apple HIG) */
-  button, a, [role="button"] { min-height: 44px; min-width: 44px; }
-}
+/* ── iOS zoom fix on inputs ── */
+input, select, textarea { font-size: 16px; }
 
-/* Safe area untuk iPhone X dan ke atas */
+/* ── safe-area bottom (home indicator iPhone) ── */
 @supports (padding: env(safe-area-inset-bottom)) {
-  body {
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-}
-
-/* Mencegah zoom saat tap input di iOS */
-@media (max-width: 768px) {
-  input, select, textarea {
-    font-size: 16px !important;
-  }
+  body { padding-bottom: env(safe-area-inset-bottom); }
 }

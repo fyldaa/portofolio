@@ -30,8 +30,8 @@ function Home() {
               Selamat datang di portfolio
             </p>
             <blockquote className="home__intro-quote font-display">
-              Dari sebuah 
-              <em> ide sederhana</em>, lahirlah karya yang menjadi bagian dari perjalanan dan perkembangan diri.
+              Dari sebuah{' '}
+              <em>ide sederhana</em>, lahirlah karya yang menjadi bagian dari perjalanan dan perkembangan diri.
             </blockquote>
           </div>
 
@@ -58,8 +58,8 @@ function Home() {
       </section>
 
       {/* ── QUICK NAV CARDS ── */}
-      <section className="home__cards container-fluid px-5 py-5">
-        <div className="row g-4">
+      <section className="home__cards">
+        <div className="home__cards-grid">
           {[
             {
               to: '/experience',
@@ -83,19 +83,17 @@ function Home() {
               accent: 'var(--blush-dark)',
             },
           ].map(card => (
-            <div className="col-md-4" key={card.to}>
-              <Link to={card.to} className="home__nav-card text-decoration-none">
-                <span
-                  className="home__nav-card-icon font-display"
-                  style={{ color: card.accent }}
-                >
-                  {card.icon}
-                </span>
-                <h3 className="home__nav-card-title font-display">{card.label}</h3>
-                <p className="home__nav-card-desc">{card.desc}</p>
-                <span className="home__nav-card-arrow">→</span>
-              </Link>
-            </div>
+            <Link to={card.to} className="home__nav-card" key={card.to}>
+              <span
+                className="home__nav-card-icon font-display"
+                style={{ color: card.accent }}
+              >
+                {card.icon}
+              </span>
+              <h3 className="home__nav-card-title font-display">{card.label}</h3>
+              <p className="home__nav-card-desc">{card.desc}</p>
+              <span className="home__nav-card-arrow">→</span>
+            </Link>
           ))}
         </div>
       </section>
