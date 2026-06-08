@@ -1,0 +1,93 @@
+.exp-form-panel {
+  background: var(--brown);
+  padding: 36px 36px 32px;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+.exp-form-panel::after {
+  content: '';
+  position: absolute;
+  bottom: -50px; right: -50px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: rgba(245, 203, 215, 0.05);
+  pointer-events: none;
+}
+.exp-form-panel__header { margin-bottom: 28px; }
+.exp-form-panel__title { font-size: 1.9rem; font-weight: 300; color: var(--cream); margin-bottom: 4px; }
+.exp-form-panel__sub { font-size: 0.78rem; color: var(--brown-muted); letter-spacing: 0.04em; margin: 0; }
+
+.exp-form-panel__group { margin-bottom: 15px; }
+.exp-form-panel__group label {
+  display: block;
+  font-size: 0.67rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brown-muted);
+  margin-bottom: 6px;
+}
+.exp-form-panel__group input,
+.exp-form-panel__group select,
+.exp-form-panel__group textarea {
+  width: 100%;
+  background: rgba(255, 247, 236, 0.05);
+  border: 1px solid rgba(200, 168, 158, 0.22);
+  color: var(--cream);
+  padding: 10px 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  outline: none;
+  border-radius: 1px;
+  transition: border-color 0.2s;
+}
+.exp-form-panel__group input:focus,
+.exp-form-panel__group select:focus,
+.exp-form-panel__group textarea:focus { border-color: rgba(245, 203, 215, 0.5); }
+.exp-form-panel__group input::placeholder,
+.exp-form-panel__group textarea::placeholder { color: rgba(200, 168, 158, 0.35); }
+.exp-form-panel__group select option { background: var(--brown); color: var(--cream); }
+.exp-form-panel__group textarea { resize: vertical; min-height: 76px; line-height: 1.6; }
+
+.exp-form-panel__btn-submit {
+  width: 100%;
+  background: var(--blush);
+  border: none;
+  color: var(--brown);
+  padding: 13px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 1px;
+  margin-top: 8px;
+  transition: background 0.2s, transform 0.15s;
+}
+.exp-form-panel__btn-submit:hover { background: var(--blush-dark); transform: translateY(-1px); }
+
+.exp-form-panel__btn-cancel {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(200, 168, 158, 0.22);
+  color: var(--brown-muted);
+  padding: 11px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 1px;
+  margin-top: 8px;
+  transition: all 0.2s;
+}
+.exp-form-panel__btn-cancel:hover { border-color: rgba(200, 168, 158, 0.5); color: var(--cream); }
+
+/* ══ MOBILE ══ */
+@media (max-width: 768px) {
+  .exp-form-panel { padding: 28px 24px; }
+  .exp-form-panel__title { font-size: 1.6rem; }
+}
+@media (max-width: 480px) {
+  .exp-form-panel { padding: 24px 18px; }
+}
